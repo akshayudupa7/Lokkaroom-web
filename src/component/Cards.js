@@ -2,6 +2,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, Card, Grid } from "@mui/material";
 
 import "./Card.css";
+import Link from "next/link";
 export default function ActionAreaCard({ val }) {
   return (
     <Grid item xs={12} sm={6} md={4}>
@@ -14,8 +15,8 @@ export default function ActionAreaCard({ val }) {
           },
         }}
       >
-        <div>
-        <CardActionArea className="cardactions" href="#" >
+      
+        <Link href="#" className="cardactions">
           <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
             /Live/
           </Typography>
@@ -28,8 +29,8 @@ export default function ActionAreaCard({ val }) {
           <Typography variant="body1" sx={{ fontWeight: "bold" }}>
             {val.sports}
           </Typography>
-        </CardActionArea>
-        </div>
+        </Link>
+    
       </Card>
 
     </Grid>
