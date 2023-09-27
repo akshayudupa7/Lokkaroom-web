@@ -14,7 +14,7 @@ export default function ActionAreaCard({ val }) {
           },
         }}
       >
-     
+        <div>
         <CardActionArea href="#" className="cardactions">
           <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
             /Live/
@@ -29,7 +29,7 @@ export default function ActionAreaCard({ val }) {
             {val.sports}
           </Typography>
         </CardActionArea>
-    
+        </div>
       </Card>
 
     </Grid>
