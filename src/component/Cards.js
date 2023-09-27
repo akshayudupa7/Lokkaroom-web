@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Card, Grid } from "@mui/material";
+import { Card, Grid } from "@mui/material";
 
 import "./Card.css";
 import Link from "next/link";
