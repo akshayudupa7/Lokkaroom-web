@@ -9,8 +9,8 @@ export default function Banner() {
     <div className='cover'>
         <Container>
             <Stack direction='column' spacing={4} sx={{display:'flex',justifyContent:"flex-end",height:'100vh',paddingBottom:"70px"}}>
-                <Typography variant='h1' className='banner_heading'>
-                    UNLOCK THE ACTION
+                <Typography variant='h1' className='banner_headin'>
+                    UNLOCK THE ACTIONS 
                 </Typography>
                 <Typography variant="h5" className='banner_para'>
                     Premimum BTS Content,mobile tickets,exclusive <br/> merchandise,rewards and more all in one place
