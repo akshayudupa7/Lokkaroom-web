@@ -14,7 +14,8 @@ export default function ActionAreaCard({ val }) {
           },
         }}
       >
-        <CardActionArea href="#" className="cardactions">
+       <div className="cardactions">
+        <CardActionArea href="#">
           <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
             /Live/
           </Typography>
@@ -28,7 +29,9 @@ export default function ActionAreaCard({ val }) {
             {val.sports}
           </Typography>
         </CardActionArea>
+        </div>
       </Card>
+
     </Grid>
   );
 }
