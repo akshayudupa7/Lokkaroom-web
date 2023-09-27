@@ -15,7 +15,7 @@ export default function ActionAreaCard({ val }) {
         }}
       >
         <div>
-        <CardActionArea href="#" className="cardactions">
+        <CardActionArea className="cardactions" href="#" >
           <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
             /Live/
           </Typography>
