@@ -1,3 +1,4 @@
+
 import Typography from "@mui/material/Typography";
 import { Card, Grid } from "@mui/material";
 
@@ -5,7 +6,7 @@ import "./Card.css";
 import Link from "next/link";
 export default function ActionAreaCard({ val }) {
   return (
-    <Grid item xs={12} sm={6} md={4}>
+    <Grid item alignItems='center' xs={12} sm={6} md={4}>
       <Card
         sx={{
           backgroundSize: "100% 100%",

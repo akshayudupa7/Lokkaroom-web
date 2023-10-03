@@ -10,6 +10,7 @@ import Banner from '@/component/Banner'
  import { Grid } from '@mui/material'
 import Footer from "../component/Footer"
 import { StickyContainer, Sticky } from 'react-sticky';
+
 import '../component/Card.css'
 export default function Home() {
    
@@ -33,6 +34,7 @@ useEffect(()=>{
         })
       }
      </Grid>
+ 
      <Footer/>
     </main>
   )

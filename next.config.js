@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images:{
-        domains:['lokkaroom.com']
+        domains:['lokkaroom.com','sport.lokkaroom.com','storage.googleapis.com']
     }
 }
 

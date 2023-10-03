@@ -4,6 +4,7 @@ import './Header.css'
 import Image from "next/image";
 import { HiMinus } from "react-icons/hi2";
 import { CgMenuLeft} from "react-icons/cg";
+import Link from 'next/link';
 
 export default function Header() {
   const [collapsed, setCollapsed] = useState(true);
@@ -37,9 +38,9 @@ export default function Header() {
         <div className="collapse navbar-collapse navbar-text" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a class="nav-link" aria-current="page" href="#">
+              <Link class="nav-link" aria-current="page" href="/find-a-lokkaroom">
                 Find a Lokkaroom
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <a
@@ -109,10 +110,11 @@ export default function Header() {
                 </li>
               </ul>
             </li>
+      
             <li className="nav-item">
-              <a className="nav-link navbar-text" aria-current="page" href="#">
+              <Link className="nav-link navbar-text" aria-current="page" href="/goapp">
                 GO TO APP
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
