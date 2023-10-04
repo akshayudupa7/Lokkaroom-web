@@ -1,127 +1,74 @@
 'use client'
-import  { useState } from 'react';
-import './Header.css'
-import Image from "next/image";
-import { HiMinus } from "react-icons/hi2";
-import { CgMenuLeft} from "react-icons/cg";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import Bar from '@/component/Bar';
+import { Hidden, Stack } from '@mui/material';
+import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
+import Dropdown1 from "@/component/Dropdown1"
+import Dropdown2 from "@/component/Dropdown2"
+import './Header.css'
+export default function ButtonAppBar({props}) {
+   
+  console.log(props)
 
-export default function Header() {
-  const [collapsed, setCollapsed] = useState(true);
-
-  const toggleMenu = () => {
-    setCollapsed(!collapsed);
-  }
-
+const [va,setValu]=useState(true)
   return (
-    <header>
-    <nav className="navbar navbar-expand-lg  main">
-      <div className="container-fluid naviagtion_menu">
-        <div style={{paddingBottom:"20px"}}>
-          <a className="navbar-brand" href="#">
-            <Image src='https://lokkaroom.com/hs-fs/hubfs/Landscape%20White150px-2.png?width=225&height=330&name=Landscape%20White150px-2.png'  width={140} height={60}/>
-          </a>
-        </div>
-        <div>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          onClick={toggleMenu}
-        >
-         {collapsed?(<CgMenuLeft  className='navbar-toggler-icon main_navbar'/>):(<HiMinus className='navbar-toggler-icon main_navbar'/>)}
-        </button>
-        <div className="collapse navbar-collapse navbar-text" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link class="nav-link" aria-current="page" href="/find-a-lokkaroom">
-                Find a Lokkaroom
-              </Link>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Create your Lokkarrom
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" style={{textAlign:"left",fontSize:"13px"}} href="#">
-                    Athlets
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" style={{textAlign:"left",fontSize:"13px"}} href="#">
-                    Clubs/Organiztions
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" style={{textAlign:"left",fontSize:"13px"}} href="#">
-                    Agents/Affilates
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Company
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" style={{textAlign:"right",fontSize:"13px"}} href="#">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" style={{textAlign:"right",fontSize:"13px"}}href="#">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" style={{textAlign:"right",fontSize:"13px"}} href="#">
-                    Water Cooler
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" style={{textAlign:"right",fontSize:"13px"}} href="#">
-                    Lokkaroom FAQ
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item"style={{textAlign:"right",fontSize:"13px"}} href="#">
-                    TMA Sport
-                  </a>
-                </li>
-              </ul>
-            </li>
-      
-            <li className="nav-item">
-              <Link className="nav-link navbar-text" aria-current="page" href="/goapp">
-                GO TO APP
-              </Link>
-            </li>
-          </ul>
-        </div>
-        </div>
-        
-      </div>
-    </nav>
-    </header>
+    <>
+    <Box sx={{ flexGrow: 1}}>
+      <AppBar position="relative" sx={{paddingTop:4,backgroundColor:"black"}}>
+
+        <Toolbar>
+        <Box sx={{display:'flex',justifyContent:"space-between",width:"100%"}}>
+        <Hidden mdDown>
+        <Box sx={{paddingBottom:2}}>
+        <Link href="/">
+          <Image src='https://lokkaroom.com/hs-fs/hubfs/Landscape%20White150px-2.png?width=225&height=330&name=Landscape%20White150px-2.png' width={140} height={70}/>
+        </Link>
+        </Box>
+        </Hidden>
+        <Box>
+        <Hidden mdUp>
+          <Bar/>
+        </Hidden>
+          <Stack direction='row' spacing={4}>
+          <Hidden mdDown>
+         
+          <Typography variant="h6" component="body1" sx={{marginTop:"7px !important"}} >
+          <Link href="/find-a-lokkaroom" className='nav-link'>
+          Find a Lokkaroom
+          </Link>
+          </Typography>
+          <Typography variant="h6" component="div" >
+          <Dropdown1/>
+          </Typography>
+          <Typography variant="h6" component="div" >
+          <Dropdown2/>
+          </Typography>
+          <Typography variant="h6" component="body1" sx={{marginTop:"8px !important"}}>
+          <Link href="/goapp" className='nav-link'>
+          GO TO APP
+          </Link>
+          </Typography>
+          </Hidden>
+          </Stack>
+          </Box>
+          </Box>
+        </Toolbar>
+      </AppBar>
+
+    </Box>
+    <Box>
+    
+    </Box>
+    </>
   );
 }

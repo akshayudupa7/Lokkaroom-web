@@ -8,10 +8,11 @@ import {
   IconButton,
   MenuIcon,
 } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
 import Image from "next/image";
 import DirectionsIcon from "@mui/icons-material/Directions";
+import "./ScrollCarousel.css";
 
 const data = [
   {
@@ -48,9 +49,13 @@ const data = [
 
 export default function ScrollCarousel() {
   return (
-    <div style={{height:"20vh",backgroundColor:"#fff",marginTop:80}}>
-      <Grid container spacing={8} sx={{display:"flex",alignItems:"center"}}>
-        <Grid item xs={12} md={6} >
+    <div style={{  backgroundColor: "#fff", marginTop: 80 }}>
+      <Grid
+        container
+        spacing={8}
+        sx={{height:160}}
+      >
+        <Grid item xs={12} md={6}>
           <Box
             sx={{
               display: "flex",
@@ -62,7 +67,7 @@ export default function ScrollCarousel() {
               "& > *": {
                 scrollSnapAlign: "center",
               },
-              "::-webkit-scrollbar": { },
+              "::-webkit-scrollbar": {},
             }}
           >
             {data.map((item) => (
@@ -78,18 +83,35 @@ export default function ScrollCarousel() {
           </Box>
         </Grid>
         <Grid item xs={12} md={6} >
-        <Paper
-      component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width:"100%",border:"2px solid grey",marginTop:"10px" }}>
-        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-        <SearchIcon />
-      </IconButton>
-      <InputBase
-        sx={{ ml: 1, flex: 1 }}
-        placeholder="Search Lokkaroom"
-        inputProps={{ 'aria-label': 'Search Lokkaroom' }}
-      />
-      </Paper>
+        <Box sx={{padding:"16px 28px 0px 48px"}}>
+          <Paper
+            component="form"
+            sx={{
+              position:"relative",
+              width: "100%",
+              border: "3px solid #B1B1B1",
+              boxShadow:'none !important'
+             
+            }}
+          >
+            <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+              <SearchIcon />
+            </IconButton>
+            <InputBase
+            
+              sx={{
+                ml: 1,
+                flex: 1,
+                paddingLeft: "14px",
+                paddingRight: "14px",
+               
+              }}
+              placeholder="Find a Club or Athlete"
+              inputProps={{ "aria-label": "Search Lokkaroom" }}
+              className="searchBox"
+            />
+          </Paper>
+          </Box>
         </Grid>
       </Grid>
     </div>

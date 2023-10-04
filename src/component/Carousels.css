@@ -6,7 +6,15 @@
     }
 
 .carousel-inner{
-    height: 40vh;
+    height: 160px;
 }
 
-    
+.swiper-pagination{
+  text-align: right !important;
+}
+
+.swiper-pagination-bullet{
+  background-color: #fff !important;
+  width:13px !important;
+  height:13px !important;
+}

@@ -4,12 +4,16 @@ import { Card, Grid } from "@mui/material";
 
 import "./Card.css";
 import Link from "next/link";
-export default function ActionAreaCard({ val }) {
+export default function ActionAreaCard({ val,key}) {
   return (
-    <Grid item alignItems='center' xs={12} sm={6} md={4}>
+  
+  <Grid item  xs={12}  sm={6} md={4}  >
       <Card
         sx={{
           backgroundSize: "100% 100%",
+          width:{lg:"100%",md:"100%",sm:"100%"},
+          height:{lg:420,md:300,sm:420,xs:800},
+         
           backgroundImage: `linear-gradient(to bottom,rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.639)), url(${val.images})`,
           "&:hover": {
             backgroundImage: `linear-gradient(to bottom,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${val.images})`,

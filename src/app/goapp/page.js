@@ -15,7 +15,7 @@ export default function page() {
         }
       },[])
   return (
-    <div  style={{width:"100%",backgroundColor:"#000"}}>
+    <div  style={{width:"100%",backgroundColor:"rgb(18, 18, 18)"}}>
          <Nav/>
          <Container sx={{display:'flex',flexDirection:'column'}}>
           <Stack >

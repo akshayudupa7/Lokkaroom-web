@@ -9,6 +9,18 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import DirectionsIcon from "@mui/icons-material/Directions";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper React components
+
+import Image from "next/image";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "./Carousels.css";
+
+// import required modules
+import { Pagination } from "swiper/modules";
 
 function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,151 +28,98 @@ function Carousel() {
   const handleSlideChange = (index) => {
     setActiveIndex(index);
   };
-  const inline = {
-    width: "12px",
-    height: "12px",
-    borderRadius: "100%  !important",
-  };
-  const dotStyle = {
-    width: "12px", // Adjust the width and height to make the dots round
-    height: "12px",
-    margin: "0 5px", // Adjust the margin between dots as needed
-    border: "none", // Remove the border
-    borderRadius: "50%", // Make the dots round
-    backgroundColor: "#000", // Set the background color of the dots
-  };
-
-  const activeDotStyle = {
-    backgroundColor: "#fff", // Set the background color of the active dot
-  };
 
   return (
-    <Grid container spacing={8}>
+    <Grid container spacing={8} sx={{ marginTop: 4 }}>
       <Grid item xs={12} md={6}>
-        <div
-          id="carouselExampleCaptions"
-          class="carousel slide"
-          data-bs-ride="carousel"
-          style={{ border: "2px solid #fff" }}
-        >
-          <div class="carousel-indicators">
-            <button
-              class="active"
-              style={inline}
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="0"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              style={inline}
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="1"
-              aria-current="true"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              class="individaul_carousel"
-              style={inline}
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="2"
-              aria-current="true"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              style={inline}
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="3"
-              aria-current="true"
-              aria-label="Slide 4"
-            ></button>
-            <button
-              type="button"
-              style={inline}
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="4"
-              aria-current="true"
-              aria-label="Slide 5"
-            ></button>
-            <button
-              type="button"
-              style={inline}
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="5"
-              aria-current="true"
-              aria-label="Slide 6"
-            ></button>
-            <button
-              type="button"
-              style={inline}
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="6"
-              aria-current="true"
-              aria-label="Slide 7"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-1.jpg&w=1920&q=75"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-2.jpg&w=1920&q=75"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-3.jpg&w=1920&q=75"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-4.jpg&w=1920&q=75"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-5.jpg&w=1920&q=75"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-6.jpg&w=1920&q=75"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-7.jpg&w=1920&q=75"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption d-none d-md-block"></div>
-            </div>
-          </div>
+      <Box sx={{width:'100%',display:"flex",justifyContent:"center"}}>
+        <Typography
+          variant="h5"
+          sx={{
+            color: "#FEFEFE",
+            fontSize: "16px",
+            fontWight: 700,
+            lineHeight: 1,
+            background: "#1D1D1D",
+           textAlign:'center',
+            width:"36%",
+            position:"relative",
+            left:0,
+            top:4,
+         padding:"4px 0px",
+
+          }}
+        >Trending on Lokkaroom</Typography>
+             
+      </Box>
+        <div style={{ width: "100%", border: "4px solid #fff" }}>
+          <Swiper
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+          >
+            <Box>
+              <SwiperSlide>
+                <Image
+                  src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-1.jpg&w=1920&q=75"
+                  layout="responsive"
+                  width={800}
+                  height={400}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-2.jpg&w=1920&q=75"
+                  layout="responsive"
+                  width={800}
+                  height={400}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-3.jpg&w=1920&q=75"
+                  layout="responsive"
+                  width={800}
+                  height={400}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-4.jpg&w=1920&q=75"
+                  layout="responsive"
+                  width={800}
+                  height={400}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-5.jpg&w=1920&q=75"
+                  layout="responsive"
+                  width={800}
+                  height={400}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-6.jpg&w=1920&q=75"
+                  layout="responsive"
+                  width={800}
+                  height={400}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src="https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Ftrending%2Ftrending-banner-7.jpg&w=1920&q=75"
+                  layout="responsive"
+                  width={800}
+                  height={400}
+                />
+              </SwiperSlide>
+            </Box>
+          </Swiper>
         </div>
+
         <div>
           <Paper
             component="form"
@@ -184,12 +143,12 @@ function Carousel() {
           </Paper>
         </div>
       </Grid>
-      <Grid item xs={12} md={6} sx={{ display: "flex", gap: "6%" }}>
+      <Grid item xs={12} md={6} sx={{ display: "flex", gap: "6%",marginTop:"24px" }}>
         <div style={{ flexBasis: "80%" }}>
           <Box
             sx={{
               marginBottom: "20px",
-              height: "30vh",
+              height: 160,
               backgroundSize: "100% 100%",
               backgroundImage: `linear-gradient(to bottom,rgba(219, 199, 92, 0.83),rgba(219, 199, 92, 0.80)), url(https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Fmarketplace.jpg&w=1920&q=75)`,
             }}
@@ -214,7 +173,7 @@ function Carousel() {
 
           <Box
             sx={{
-              height: "30vh",
+              height:160,
               backgroundSize: "100% 100%",
               backgroundImage: `linear-gradient(to bottom,rgba(219, 199, 92, 0.83),rgba(219, 199, 92, 0.80)), url(https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Fwallet.jpg&w=1920&q=75)`,
             }}
@@ -240,7 +199,8 @@ function Carousel() {
         <div style={{ flexBasis: "80%" }}>
           <Box
             sx={{
-              height: "60vh",
+              height: 340,
+              border: "3px solid #fff",
               backgroundSize: "100% 100%",
               backgroundImage: `linear-gradient(to bottom,rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.639)), url(https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Fcollectibles-2.jpg&w=1920&q=75)`,
             }}

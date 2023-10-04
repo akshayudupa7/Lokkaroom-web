@@ -8,7 +8,9 @@ export default function ImageBox() {
 
       <Box
         sx={{
-            height: "30vh",
+           hieght:180,
+            maxHeight: "100%",
+           minHeight:"100%",
           backgroundSize: "100% 100%",
           backgroundImage: `url('https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Fads%2Fadvert.jpg&w=1920&q=75')`,
         }}
@@ -21,7 +23,9 @@ export default function ImageBox() {
       <Grid item xs={12} md={6}>
       <Box
         sx={{
-          height: "30vh",
+            height:180,
+            maxHeight: "100%",
+           minHeight:"100%",
           backgroundSize: "100% 100%",
           backgroundImage: `url(https://sport.lokkaroom.com/_next/image?url=%2Fimages%2Fbanners%2Fad-2.png&w=1920&q=75)`,
         }}

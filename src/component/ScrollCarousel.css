@@ -1,0 +1,7 @@
+.searchBox{
+    font-weight: 700;
+    font-size: 18px;
+}
+.MuiInputBase-root::placeholder{
+    color:black !important;
+}
