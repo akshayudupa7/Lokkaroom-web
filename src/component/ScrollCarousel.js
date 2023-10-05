@@ -7,12 +7,15 @@ import {
   Divider,
   IconButton,
   MenuIcon,
+  Hidden,
+  Container,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
 import Image from "next/image";
 import DirectionsIcon from "@mui/icons-material/Directions";
 import "./ScrollCarousel.css";
+import { FaSearch } from "react-icons/fa";
 
 const data = [
   {
@@ -49,71 +52,189 @@ const data = [
 
 export default function ScrollCarousel() {
   return (
-    <div style={{  backgroundColor: "#fff", marginTop: 80 }}>
-      <Grid
-        container
-        spacing={8}
-        sx={{height:160}}
-      >
-        <Grid item xs={12} md={6}>
-          <Box
-            sx={{
-              display: "flex",
-              gap: 4,
-              py: 1,
-              overflow: "auto",
-              width: "100%",
-              scrollSnapType: "x mandatory",
-              "& > *": {
-                scrollSnapAlign: "center",
-              },
-              "::-webkit-scrollbar": {},
-            }}
+    <>
+      <Hidden mdDown>
+        <Container>
+          <div
+            style={{ backgroundColor: "#fff", marginTop: 80, paddingTop: 4 }}
           >
-            {data.map((item) => (
+            <Grid container spacing={8} sx={{ height: "auto", paddingLeft: 2 }}>
+              <Grid item xs={12} md={6}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: 4,
+                    py: 1,
+                    overflow: "auto",
+                    width: "100%",
+                    scrollSnapType: "none",
+                    "& > *": {
+                      scrollSnapAlign: "center",
+                    },
+                  }}
+                >
+                  {data.map((item) => (
+                    <Box
+                      orientation="horizontal"
+                      size="sm"
+                      key={item.title}
+                      variant="contained"
+                    >
+                      <Image src={item.src} width={70} height={70} />
+                    </Box>
+                  ))}
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    paddingBottom: "20px",
+                    paddingRight: "20px",
+                  }}
+                >
+                  <Paper
+                    component="form"
+                    sx={{
+                      width: "100%",
+                      border: "3px solid #B1B1B1",
+                      boxShadow: "none !important",
+                    }}
+                  >
+                    <IconButton
+                      type="button"
+                      sx={{ p: "10px", fontWeight: 700, fontSize: "18px" }}
+                      aria-label="search"
+                    >
+                      <FaSearch
+                        style={{
+                          fontSize: "23px",
+                          fontWeight: 700,
+                          color: "black",
+                        }}
+                      />
+                    </IconButton>
+                    <InputBase
+                      sx={{
+                        ml: 1,
+                        flex: 1,
+                        paddingLeft: "14px",
+                        paddingRight: "14px",
+                        fontWeight: 700,
+                        fontSize: "18px",
+                      }}
+                      placeholder="Find a Club or Athlete"
+                      inputProps={{
+                        "aria-label": "Search Lokkaroom",
+                        sx: {
+                          "&::placeholder": {
+                            color: "red",
+                            opacity: 1,
+                          },
+                        },
+                      }}
+                    />
+                  </Paper>
+                </Box>
+              </Grid>
+            </Grid>
+          </div>
+        </Container>
+      </Hidden>
+      <Hidden mdUp>
+        <div style={{ backgroundColor: "rgb(18, 18, 18)", marginTop: 80 }}>
+          <Grid container spacing={8} sx={{ height: "auto" }}>
+            <Grid item xs={12} md={6}>
               <Box
-                orientation="horizontal"
-                size="sm"
-                key={item.title}
-                variant="contained"
+                sx={{
+                  display: "flex",
+                  gap: 4,
+                  py: 1,
+                  paddingLeft: 2,
+                  overflow: "auto",
+                  width: "100%",
+                  backgroundColor: "#fff",
+                  scrollSnapType: "none",
+                  "& > *": {
+                    scrollSnapAlign: "center",
+                  },
+                }}
               >
-                <Image src={item.src} width={70} height={70} />
+                {data.map((item) => (
+                  <Box
+                    orientation="horizontal"
+                    size="sm"
+                    key={item.title}
+                    variant="contained"
+                  >
+                    <Image src={item.src} width={70} height={70} />
+                  </Box>
+                ))}
               </Box>
-            ))}
-          </Box>
-        </Grid>
-        <Grid item xs={12} md={6} >
-        <Box sx={{padding:"16px 28px 0px 48px"}}>
-          <Paper
-            component="form"
-            sx={{
-              position:"relative",
-              width: "100%",
-              border: "3px solid #B1B1B1",
-              boxShadow:'none !important'
-             
-            }}
-          >
-            <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
-              <SearchIcon />
-            </IconButton>
-            <InputBase
-            
-              sx={{
-                ml: 1,
-                flex: 1,
-                paddingLeft: "14px",
-                paddingRight: "14px",
-               
-              }}
-              placeholder="Find a Club or Athlete"
-              inputProps={{ "aria-label": "Search Lokkaroom" }}
-              className="searchBox"
-            />
-          </Paper>
-          </Box>
-        </Grid>
-      </Grid>
-    </div>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Container>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    paddingBottom: "20px",
+                  }}
+                >
+                  <Paper
+                    component="form"
+                    sx={{
+                      position: "relative",
+                      width: "100%",
+                      border: "3px solid #B1B1B1",
+                      boxShadow: "none !important",
+                    }}
+                  >
+                    <IconButton
+                      type="button"
+                      sx={{ p: "10px", fontWeight: 700, fontSize: "18px" }}
+                      aria-label="search"
+                    >
+                      <FaSearch
+                        style={{
+                          fontSize: "23px",
+                          fontWeight: 700,
+                          color: "black",
+                        }}
+                      />
+                    </IconButton>
+                    <InputBase
+                      sx={{
+                        ml: 1,
+                        flex: 1,
+                        paddingLeft: "14px",
+                        paddingRight: "14px",
+                        fontWeight: 700,
+                        fontSize: "18px",
+                      }}
+                      placeholder="Find a Club or Athlete"
+                      inputProps={{
+                        "aria-label": "Search Lokkaroom",
+                        sx: {
+                          "&::placeholder": {
+                            color: "red",
+                            opacity: 1,
+                          },
+                        },
+                      }}
+                    />
+                  </Paper>
+                </Box>
+              </Container>
+            </Grid>
+          </Grid>
+        </div>
+      </Hidden>
+    </>
   );
 }

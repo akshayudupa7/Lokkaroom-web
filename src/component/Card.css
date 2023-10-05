@@ -5,27 +5,14 @@
 .cardactions{
     display: flex;
     color: #fff;
+    width:"100%";
     align-items: center;
-    gap: 10px;
     flex-direction: column;
-    text-decoration: none;
-   justify-content: center;
+    justify-content: center;
    text-align: center;
-   height:100%;
+   height: max-content;
     transition: transform 0.3s ease;
-}
-.cardactions:hover{
-    border: 5px solid ;
-    transition: transform 5s ease;
-    position:"absolute";
-    top:0;
+    position: relative;
 }
 
-@media(max-width:1200px){
-.box{
-    flex-wrap: wrap;
-    gap: 60px 0;
-    position: relative;
-    width: 100%;
-}
-}
+

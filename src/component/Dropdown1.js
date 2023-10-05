@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import { AiOutlineDown } from "react-icons/ai";
 import Link from "next/link";
-import "./Dropdown.css"
+import "./Dropdown.css";
 const Dropstyles = {
   backgroundColor: "black",
 };
@@ -27,9 +27,10 @@ export default function FadeMenu() {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onMouseOver={handleClick}
-      
       >
-        <Link href='/join'  className="nav-link">Create Your Lokkaroom &nbsp; <AiOutlineDown /></Link>
+        <Link href="/join" className="nav-link">
+          Create Your Lokkaroom &nbsp; <AiOutlineDown />
+        </Link>
       </Button>
       <Menu
         id="fade-menu"

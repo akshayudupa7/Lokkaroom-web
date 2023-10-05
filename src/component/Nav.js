@@ -9,45 +9,155 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 import Link from "next/link";
 import "./Nav.css";
-import { Stack ,Hidden} from "@mui/material";
+import { Stack, Hidden } from "@mui/material";
 import ButtonDraw from "./BottomDraw";
-import { AiOutlineMinus,  AiOutlineDown} from "react-icons/ai";
-import {CgMenuLeft } from "react-icons/cg";
-
+import { AiOutlineMinus, AiOutlineDown, AiOutlineClose } from "react-icons/ai";
+import { CgMenuLeft } from "react-icons/cg";
+import SideDraw from "@/component/SideDraw";
+import BottomDraw from "@/component/BottomDraw";
 export default function Nav() {
+  const styles = {
+    hideScrollbar: {
+      scrollbarWidth: "none", // Firefox
+      "&::-webkit-scrollbar": {
+        width: "0.5em",
+      },
+    },
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "rgb(18,18,18)",zIndex:1999 }}>
+      <AppBar
+        position="sticky"
+        sx={{ backgroundColor: "rgb(18,18,18)", zIndex: 1999 }}
+      >
         <Toolbar>
-          <ButtonDraw/>
-          <div style={{display:"flex",justifyContent:"space-between",width:"100%",gap:"20px"}}>
+          <Hidden mdUp>
+            <SideDraw />
+          </Hidden>
+          <Hidden mdDown>
+            <BottomDraw />
+          </Hidden>
+
+          <div
+            style={{
+              display: "flex",
+
+              justifyContent: "space-between",
+              width: "100%",
+              gap: "20px",
+            }}
+          >
             <div>
               <Link href="/">
-                <Image
-                  src="https://lokkaroom.com/hs-fs/hubfs/Landscape%20White150px-2.png?width=225&height=330&name=Landscape%20White150px-2.png"
-                  width={180}
-                  height={80}
-                  className="logo"
-                />
+                <Hidden mdUp>
+                  <Image
+                    src="https://lokkaroom.com/hs-fs/hubfs/Landscape%20White150px-2.png?width=225&height=330&name=Landscape%20White150px-2.png"
+                    width={120}
+                    height={50}
+                    className="logo"
+                  />
+                </Hidden>
+                <Hidden mdDown>
+                  <Image
+                    src="https://lokkaroom.com/hs-fs/hubfs/Landscape%20White150px-2.png?width=225&height=330&name=Landscape%20White150px-2.png"
+                    width={180}
+                    height={80}
+                    className="logo"
+                  />
+                </Hidden>
               </Link>
             </div>
-            <Stack direction='row' spacing={1} sx={{marginTop:4}}>
-            <Box>
-           
-              <Button
-                className="nav1_button"
-              >
-                Sign In
-              </Button>
-            </Box>
-            <Box>
-              <Button
-                className="nav2_button"
-              >
-                Sign Up
-              </Button>
-            </Box>
-          </Stack>
+            <Hidden mdDown>
+              <Stack direction="row" spacing={1} sx={{ marginTop: 4 }}>
+                <Box>
+                  <Button
+                    sx={{
+                      color: "rgb(254, 254, 254)",
+                      border: "2px solid rgb(254, 254, 254)",
+                      minWidth: "126px",
+                      height: "36px",
+                      fontSize: "0.9rem",
+                      fontWeight: 600,
+                      background: "transperent",
+                      marginRight: "10px",
+                      height: "36px",
+                      textTransform: "none",
+                      "&:hover": {
+                        color: "rgb(248, 187, 90)",
+                        border: "2px solid rgb(248, 187, 90)",
+                      },
+                    }}
+                  >
+                    Sign In
+                  </Button>
+                </Box>
+                <Box>
+                  <Button
+                    sx={{
+                      color: "rgba(0, 0, 0, 0.87)",
+                      backgroundColor: "rgb(248, 187, 90)",
+                      minWidth: "126px",
+                      height: "36px",
+                      fontSize: "0.9rem",
+                      fontWeight: 600,
+                      marginRight: "10px",
+                      height: "36px",
+                      textTransform: "none",
+                      "&:hover": {
+                        backgroundColor: "rgb(243, 153, 10)",
+                      },
+                    }}
+                  >
+                    Sign Up
+                  </Button>
+                </Box>
+              </Stack>
+            </Hidden>
+            <Hidden mdUp>
+              <Stack direction="row" sx={{ marginTop: 3 }}>
+                <Box>
+                  <Button
+                    sx={{
+                      color: "rgb(254, 254, 254)",
+                      border: "2px solid rgb(254, 254, 254)",
+                      minWidth: "86px",
+                      height: "26px",
+                      fontSize: "0.7rem",
+                      fontWeight: 600,
+                      background: "transperent",
+                      marginRight: "10px",
+                      textTransform: "none",
+                      "&:hover": {
+                        color: "rgb(248, 187, 90)",
+                        border: "2px solid rgb(248, 187, 90)",
+                      },
+                    }}
+                  >
+                    Sign In
+                  </Button>
+                </Box>
+                <Box>
+                  <Button
+                    sx={{
+                      color: "rgba(0, 0, 0, 0.87)",
+                      backgroundColor: "rgb(248, 187, 90)",
+
+                      minWidth: "86px",
+                      height: "26px",
+                      fontSize: "0.7rem",
+                      fontWeight: 600,
+                      marginRight: "10px",
+                      textTransform: "none",
+                      "&:hover": {
+                        backgroundColor: "rgb(243, 153, 10)",
+                      },
+                    }}
+                  >
+                    Sign Up
+                  </Button>
+                </Box>
+              </Stack>
+            </Hidden>
           </div>
         </Toolbar>
       </AppBar>

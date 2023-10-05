@@ -25,31 +25,31 @@ const data = [
 
 export default function BigCarousel() {
   return (
-     <div style={{marginTop:"80px"}}>
-    <Box
-      sx={{
-        display: "flex",
-        py: 1,
-        overflow: "auto",
-        width: "100%",
-        scrollSnapType: "x mandatory",
-        "& > *": {
-          scrollSnapAlign: "center",
-        },
-        "::-webkit-scrollbar": { display: "none" },
-      }}
-    >
-      {data.map((item) => (
-        <Box
-          orientation="horizontal"
-          size="sm"
-          key={item.title}
-          variant="contained"
-        >
-          <Image src={item.src} width={500} height={300} />
-        </Box>
-      ))}
-    </Box>
+    <div style={{ marginTop: "80px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          py: 1,
+          overflow: "auto",
+          width: "100%",
+          scrollSnapType: "x mandatory",
+          "& > *": {
+            scrollSnapAlign: "center",
+          },
+          "::-webkit-scrollbar": { display: "none" },
+        }}
+      >
+        {data.map((item) => (
+          <Box
+            orientation="horizontal"
+            size="sm"
+            key={item.title}
+            variant="contained"
+          >
+            <Image src={item.src} width={500} height={300} />
+          </Box>
+        ))}
+      </Box>
     </div>
   );
 }

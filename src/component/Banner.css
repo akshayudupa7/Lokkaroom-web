@@ -1,7 +1,7 @@
 .cover{
     background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.639)), url('https://lokkaroom.com/hubfs/15_May_LKRM_Instagram_Grid_-2.png');
     background-size: cover;
-    height:100vh;
+    height:320
    
 }
 .Banner_Button{

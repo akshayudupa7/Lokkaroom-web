@@ -18,15 +18,17 @@ export default function page() {
     <div  style={{width:"100%",backgroundColor:"rgb(18, 18, 18)"}}>
          <Nav/>
          <Container sx={{display:'flex',flexDirection:'column'}}>
-          <Stack >
+       
          <Carousels/>
          <BigCarousel/>
          <Boxes/>
          <ImageBox/>
-         <ScrollCarousel/>
-         </Stack>
-         <Gofooter/>
+       
          </Container>
+         <ScrollCarousel/>
+        
+         <Gofooter/>
+       
     </div>
   )
 }

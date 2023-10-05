@@ -18,7 +18,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Carousels.css";
-
+import { FaSearch } from "react-icons/fa";
 // import required modules
 import { Pagination } from "swiper/modules";
 
@@ -38,16 +38,16 @@ function Carousel() {
           sx={{
             color: "#FEFEFE",
             fontSize: "16px",
-            fontWight: 700,
+            fontWeight:700,
             lineHeight: 1,
             background: "#1D1D1D",
            textAlign:'center',
-            width:"36%",
+           
             position:"relative",
             left:0,
             top:4,
-         padding:"4px 0px",
-
+         padding:"4px 4px",
+           
           }}
         >Trending on Lokkaroom</Typography>
              
@@ -132,14 +132,30 @@ function Carousel() {
               marginTop: "10px",
             }}
           >
-            <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
-              <SearchIcon />
-            </IconButton>
+           <IconButton type="button" sx={{ p: "10px" , fontWeight: 700,
+                  fontSize: "18px"}} aria-label="search">
+                <FaSearch style={{ fontSize: "23px",fontWeight: 700,color:"black"}}/>
+              </IconButton>
             <InputBase
-              sx={{ ml: 1, flex: 1 }}
-              placeholder="Search Lokkaroom"
-              inputProps={{ "aria-label": "Search Lokkaroom" }}
-            />
+                sx={{
+                  ml: 1,
+                  flex: 1,
+                  paddingLeft: "14px",
+                  paddingRight: "14px",
+                  fontWeight: 700,
+                  fontSize: "18px"
+                  
+                }}
+                placeholder="Search Lokkaroom"
+                inputProps={{ "aria-label": "Search Lokkaroom",
+                sx: {
+            '&::placeholder': {
+               color: 'black',
+               opacity: 1, 
+          },
+        },}}
+              
+              />
           </Paper>
         </div>
       </Grid>

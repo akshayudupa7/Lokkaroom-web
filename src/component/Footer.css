@@ -10,12 +10,3 @@
     gap: 30px;
     line-height: 0;
 }
-
-
-@media(max-width:900px){
-    .socialmedia{
-        display: flex;
-       flex-direction: column;
-       justify-content: flex-start;
-    }
-}
