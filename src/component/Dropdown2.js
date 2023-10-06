@@ -28,6 +28,7 @@ export default function FadeMenu() {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onMouseOver={handleClick}
+        sx={{display:"flex"}}
       >
         <Link href="/join" className="nav-link">
           Company&nbsp; <AiOutlineDown />
@@ -43,21 +44,25 @@ export default function FadeMenu() {
         onClose={handleClose}
         TransitionComponent={Fade}
         sx={{
-          display: "flex",
-          justifyContent: "flex-end",
-          width: "100%",
+         width:"100%",
           ".MuiMenu-paper": {
             backgroundColor: "black",
             color: "white",
             border: "4px solid orange",
-            width: 250,
+             width:250,
+            display: "flex",
+           alignItems: "flex-end",
+       
           },
         }}
       >
         <MenuItem
           onClick={handleClose}
           sx={{
-            textAlign: "right",
+            width:220,
+            fontSize:"14px",
+            display: "flex",
+          justifyContent:"flex-end",
             "&:hover": { backgroundColor: "#ff9928", margin: "0px 10px" },
           }}
         >
@@ -67,7 +72,10 @@ export default function FadeMenu() {
         <MenuItem
           onClick={handleClose}
           sx={{
-            textAlign: "right",
+            width:220,
+            fontSize:"14px",
+            display: "flex",
+          justifyContent:"flex-end",
             "&:hover": { backgroundColor: "#ff9928", margin: "0px 10px" },
           }}
         >
@@ -76,7 +84,10 @@ export default function FadeMenu() {
         <MenuItem
           onClick={handleClose}
           sx={{
-            textAlign: "right",
+            width:220,
+            fontSize:"14px",
+            display: "flex",
+          justifyContent:"flex-end",
             "&:hover": { backgroundColor: "#ff9928", margin: "0px 10px" },
           }}
         >
@@ -85,7 +96,10 @@ export default function FadeMenu() {
         <MenuItem
           onClick={handleClose}
           sx={{
-            textAlign: "right",
+            width:220,
+            fontSize:"14px",
+            display: "flex",
+          justifyContent:"flex-end",
             "&:hover": { backgroundColor: "#ff9928", margin: "0px 10px" },
           }}
         >
@@ -94,7 +108,10 @@ export default function FadeMenu() {
         <MenuItem
           onClick={handleClose}
           sx={{
-            textAlign: "right",
+            width:220,
+            fontSize:"14px",
+            display: "flex",
+          justifyContent:"flex-end",
             "&:hover": { backgroundColor: "#ff9928", margin: "0px 10px" },
           }}
         >
