@@ -38,9 +38,9 @@ export default function Gofooter() {
           <Typography variant="subtitle1" sx={{ color: "#fff" }}>
             By using Lokkaroom, you agree to collect, trade and play responsibly
             and respectfully towards all other users, clubs and athletes. View
-            our full Terms and Conditions, our Cookie Policy and Privacy Policy.
+            our <Link href="#" style={{color:"#F8BB5A"}}>full Terms and Conditions </Link>, our <Link  href="#" style={{color:"#F8BB5A"}}>Cookie Policy </Link>  and  <Link href="#"  style={{color:"#F8BB5A"}}> Privacy Policy</Link>.
           </Typography>
-        </Stack>
+        </Stack> 
         <Stack direction="row" spacing={4} sx={{ marginTop: 4 }}>
           <Image
             src="https://lokkaroom.com/hs-fs/hubfs/Landscape%20White150px-2.png?width=225&height=330&name=Landscape%20White150px-2.png"

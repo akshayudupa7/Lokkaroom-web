@@ -43,7 +43,7 @@ export default function Footer() {
           <Typography variant="subtitle1" sx={{ color: "#fff" }}>
             By using Lokkaroom, you agree to collect, trade and play responsibly
             and respectfully towards all other users, clubs and athletes. View
-            our full Terms and Conditions, our Cookie Policy and Privacy Policy.
+            our <Link href="#" style={{color:"#F8BB5A"}}> full Terms and Conditions </Link>, our <Link  href="#" style={{color:"#F8BB5A"}}> Cookie Policy </Link> and <Link href="#"  style={{color:"#F8BB5A"}}> Privacy Policy</Link>.
           </Typography>
         </Stack>
         <div className="socialmedia">
